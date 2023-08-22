@@ -1,6 +1,4 @@
-import { StatusBar } from "expo-status-bar";
-import { ImageBackground, StyleSheet, Text, View,Image } from "react-native";
-import LinearGradient from "expo-linear-gradient";
+import { StyleSheet, Text, View,Image } from "react-native";
 
 function renderAppIcon(){
   return(
