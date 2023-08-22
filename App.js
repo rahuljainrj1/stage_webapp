@@ -7,7 +7,7 @@ function renderAppIcon(){
     <View style={{flexDirection:"row",alignItems:"center"}}>
       <Image style={{width: 40,height:40}} source={require("./assets/icon.png")}/>
       <View style={{flexDirection:"column",marginHorizontal:16}}>
-        <Text style={{fontSize: 20}}>Stage</Text>
+        <Text style={{fontSize: 18}}>Stage</Text>
         <Text>Learn, Challenge and Grow</Text>
       </View>
     </View>
@@ -69,19 +69,6 @@ export default function App() {
   );
 }
 
-{
-  /* <View>
-<View>
-  <Text>Welcome to Stage!</Text>
-  <Text>Social learning paltform</Text>
-</View>
-<View>
-  <Text>Mockup</Text>
-  <Text>Download from Playstore</Text>
-  <Text>get it from app Store</Text>
-</View>
-</View> */
-}
 const styles = StyleSheet.create({
   container: {
     flex: 1,
