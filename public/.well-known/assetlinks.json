@@ -1,0 +1,13 @@
+[
+    {
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "Stage",
+        "package_name": "com.stage.android",
+        "sha256_cert_fingerprints": [
+          "FF:B6:59:89:67:F5:B3:29:57:0D:F1:06:F9:75:A4:F6:E9:E2:D8:A0:FC:76:7F:95:5F:0D:92:43:84:BA:24:3A"
+        ]
+      }
+    }
+  ]
+  
