@@ -1,5 +1,4 @@
 import { StyleSheet, Text, View,Image } from "react-native";
-
 function renderAppIcon(){
   return(
     <View style={{flexDirection:"row",alignItems:"center"}}>
@@ -55,6 +54,14 @@ function renderBottomBar(){
     </View>
   )
 }
+// useEffect(() => {
+//   first
+
+//   return () => {
+//     second
+//   }
+// }, [])
+
 
 
 export default function App() {
