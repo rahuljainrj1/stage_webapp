@@ -37,12 +37,14 @@ const DemoView = () => {
         resizeMode="contain"
         source={require("../assets/screenshots/apple_screen_empty.png")}
       /> */}
+      <View>
       <ImageUpdater width={screenWidth/2} height={screenHeight-240} elevation={1} startIndex={0} />
-      <View style={{position:'absolute',top:screenHeight/4,start:80}}>
+      <View style={{position:'absolute',top:80,start:80}}>
         <ImageUpdater width={screenWidth/5} height={(screenHeight/2)} elevation={0} startIndex={4}/>
       </View>
-      <View style={{position:'absolute',top:screenHeight/4,end:80}}>
+      <View style={{position:'absolute',top:80,end:80}}>
         <ImageUpdater width={screenWidth/5} height={(screenHeight/2)} elevation={0} startIndex={1}/>
+      </View>
       </View>
     </View>
   );

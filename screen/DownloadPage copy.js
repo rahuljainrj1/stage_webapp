@@ -9,7 +9,6 @@ import {
   Image,
   Alert,
   ImageBackground,
-  Pressable,
 } from "react-native";
 import DemoView from "../component/DemoView";
 import * as Linking from "expo-linking";
@@ -25,33 +24,36 @@ const fontSizeScaler = (size) => {
 };
 
 const showBetaSignUpAlert = () => {
-  console.log("Clicked on beta sign up");
+  console.log("Clicked on beta sign up")
   window.alert(
-    "Sign Up for Beta Program",
-    "Would you like to sign up for our beta program?",
+    'Sign Up for Beta Program',
+    'Would you like to sign up for our beta program?',
     [
       {
-        text: "Sign Up",
+        text: 'Sign Up',
         onPress: handleSignUp,
       },
       {
-        text: "Cancel",
+        text: 'Cancel',
         onPress: handleCancel,
-        style: "cancel",
+        style: 'cancel',
       },
     ]
   );
 };
 
-const handleSignUp = () => {
+const handleSignUp = () =>{
   Linking.openURL(
     "https://play.google.com/store/apps/details?id=com.stage.android"
   );
-};
+}
 
-const handleCancel = () => {};
+const handleCancel = () =>{
 
-const DownloadPage = ({ setCurrentScreen }) => {
+}
+
+const DownloadPage = () => {
+    console.log(screenWidth)
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <View style={{ flex: 1, flexDirection: "row" }}>
@@ -63,7 +65,20 @@ const DownloadPage = ({ setCurrentScreen }) => {
             justifyContent: "center",
           }}
         >
-          <DemoView />
+            {/* <Text
+            style={{
+              fontFamily: "Clash-Medium",
+              fontSize: fontSizeScaler(10),
+            }}
+          >
+            Enhanced Learning{" "}
+          </Text>
+          <Image
+            style={{ width: screenWidth / 3, height: screenHeight - 240 }}
+            resizeMode="contain"
+            source={require("../assets/screenshots/apple_screen_empty.png")}
+          /> */}
+          <DemoView/>
         </View>
         <ImageBackground
           style={{
@@ -91,14 +106,11 @@ const DownloadPage = ({ setCurrentScreen }) => {
             <View
               style={{ flexDirection: "row", columnGap: 30, marginTop: 20 }}
             >
-              <TouchableOpacity
-                style={styles.downloadButton}
-                onPress={() => {
-                  Linking.openURL(
+              <TouchableOpacity style={styles.downloadButton} onPress={()=>{
+                 Linking.openURL(
                     "https://play.google.com/store/apps/details?id=com.stage.android"
                   );
-                }}
-              >
+              }}>
                 <Image
                   style={{ alignSelf: "center", width: 224, height: 56 }}
                   source={require("../assets/google-play-badge.png")}
@@ -138,18 +150,12 @@ const DownloadPage = ({ setCurrentScreen }) => {
               marginBottom: 20,
             }}
           >
-            <Pressable onPress={() => setCurrentScreen("Privacy")}>
+            <TouchableOpacity>
               <Text style={styles.bottomButton}>Privacy policy</Text>
-            </Pressable>
-            {/* <Pressable onPress={() => setCurrentScreen("Terms")}>
-              <Text style={styles.bottomButton}>Terms of use</Text>
-            </Pressable> */}
-            <Pressable onPress={() => setCurrentScreen("New")}>
-              <Text style={styles.bottomButton}>What's new</Text>
-            </Pressable>
-            <Pressable onPress={() => setCurrentScreen("Career")}>
-              <Text style={styles.bottomButton}>Career</Text>
-            </Pressable>
+            </TouchableOpacity>
+            <Text style={styles.bottomButton}>Terms of use</Text>
+            <Text style={styles.bottomButton}>What's new</Text>
+            <Text style={styles.bottomButton}>Career</Text>
           </View>
           <Text style={styles.bottomButton}>2023 Stage App</Text>
         </View>
