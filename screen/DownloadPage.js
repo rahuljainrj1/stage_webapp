@@ -10,13 +10,14 @@ import {
   Alert,
   ImageBackground,
   Pressable,
+  Platform,
 } from "react-native";
 import DemoView from "../component/DemoView";
 import * as Linking from "expo-linking";
 
 const screenWidth = Dimensions.get("window").width;
 const screenHeight = Dimensions.get("window").height;
-
+const web = Platform.OS === 'web'
 const fontSizeScaler = (size) => {
   const standardWidth = 1229; // Width where font size is designed
   const scaleFactor = screenWidth / standardWidth;
@@ -54,7 +55,7 @@ const handleCancel = () => {};
 const DownloadPage = ({ setCurrentScreen }) => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <View style={{ flex: 1, flexDirection: "row" }}>
+      <View style={{ flex: 1, flexDirection: web?"row":"column" }}>
         <View
           style={{
             flex: 0.4,
