@@ -17,7 +17,7 @@ import * as Linking from "expo-linking";
 
 const screenWidth = Dimensions.get("window").width;
 const screenHeight = Dimensions.get("window").height;
-const web = Platform.OS === 'web'
+const web = screenWidth > 900;
 const fontSizeScaler = (size) => {
   const standardWidth = 1229; // Width where font size is designed
   const scaleFactor = screenWidth / standardWidth;
@@ -58,22 +58,24 @@ const DownloadPage = ({ setCurrentScreen }) => {
       <View style={{ flex: 1, flexDirection: web?"row":"column" }}>
         <View
           style={{
-            flex: 0.4,
+            flex:web? 0.4:1,
             backgroundColor: "#fff",
             alignItems: "center",
             justifyContent: "center",
+            paddingTop: web?0:80
           }}
         >
           <DemoView />
         </View>
         <ImageBackground
           style={{
-            flex: 0.6,
+            flex: web? 0.6:1,
             width: "100%",
             height: "100%",
             alignItems: "center",
             alignContent: "center",
-            paddingTop: 80,
+            paddingTop: web?80:0,
+            marginTop:web?0: 20
           }}
           source={require("../assets/background.png")}
         >
@@ -90,7 +92,7 @@ const DownloadPage = ({ setCurrentScreen }) => {
               new sets of challenges and innovators all at one place.{" "}
             </Text>
             <View
-              style={{ flexDirection: "row", columnGap: 30, marginTop: 20 }}
+              style={{ flexDirection:"row", columnGap: fontSizeScaler(30), marginTop: fontSizeScaler(20), }}
             >
               <TouchableOpacity
                 style={styles.downloadButton}
@@ -126,8 +128,8 @@ const DownloadPage = ({ setCurrentScreen }) => {
             paddingVertical: 24,
             alignItems: "center",
             justifyContent: "center",
-            start: screenWidth * 0.4,
-            width: screenWidth * 0.6,
+            start: web?screenWidth * 0.4: 0,
+            width: web?screenWidth * 0.6: screenWidth,
           }}
         >
           <View
@@ -184,6 +186,7 @@ const styles = StyleSheet.create({
   downloadButton: {
     // width: screenWidth / 3,
     // height: screenHeight / 10,
+    marginVertical: 16
   },
   buttonText: {
     color: "white",

@@ -19,6 +19,7 @@ import OurStoryPage from "./screen/OurStoryPage";
 import PrivacyPage from "./screen/PrivacyPage";
 
 const { width, height } = new Dimensions.get("window");
+const web = width > 900;
 let customFonts = {
   "Clash-Medium": require("./assets/fonts/ClashDisplay-Medium.otf"),
   "Clash-Regular": require("./assets/fonts/ClashDisplay-Regular.otf"),
@@ -154,7 +155,7 @@ const styles = StyleSheet.create({
   navigationText: {
     fontSize: 16,
     padding: 12,
-    color: "#fff",
+    color: web?"#fff":"#161924",
     fontFamily:"Clash-Medium"
   },
   bottomButton: {
